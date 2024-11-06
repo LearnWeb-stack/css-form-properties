@@ -10,189 +10,274 @@
 
     body {
       font-family: system-ui, sans-serif;
-      background: #f0f2f5;
-      padding: 20px;
       line-height: 1.6;
+      padding: 30px;
+      background: #f5f5f5;
     }
 
-    .form-container {
-      background: white;
-      max-width: 500px;
+    .tutorial-container {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 30px;
+      background: white;
+      padding: 40px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .form-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .form-header h1 {
+    h1 {
       color: #333;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .form-header p {
-      color: #666;
-    }
-
-    .form-group {
       margin-bottom: 20px;
+      text-align: center;
     }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 500;
+    .section {
+      margin-bottom: 40px;
     }
 
-    .required::after {
-      content: "*";
-      color: #ff4444;
-      margin-left: 4px;
+    h2 {
+      color: #2563eb;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e7eb;
     }
 
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+    h3 {
+      color: #4b5563;
+      margin: 20px 0 10px 0;
+    }
+
+    .property {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 10px 0;
+      border: 1px solid #e5e7eb;
+    }
+
+    .property-name {
+      color: #2563eb;
+      font-weight: bold;
+      font-family: monospace;
       font-size: 16px;
-      color: #333;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #4a90e2;
-      outline: none;
+    .property-description {
+      margin: 10px 0;
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .help-text {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    .checkbox-group {
-      margin: 20px 0;
-    }
-
-    .checkbox-group input {
-      width: auto;
-      margin-right: 10px;
-    }
-
-    .checkbox-group label {
-      display: inline;
-      color: #666;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #4a90e2;
-      color: white;
-      border: none;
+    .example {
+      background: #334155;
+      color: #e5e7eb;
+      padding: 15px;
       border-radius: 6px;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
+      font-family: monospace;
+      margin: 10px 0;
     }
 
-    button:hover {
-      background: #357abd;
+    .note {
+      background: #fef3c7;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 10px 0;
+      border-left: 4px solid #f59e0b;
     }
 
-    @media (max-width: 600px) {
-      .form-container {
-        padding: 20px;
-      }
+    code {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #374151;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <div class="form-header">
-      <h1>Create Account</h1>
-      <p>Fill in the details to get started</p>
+  <div class="tutorial-container">
+    <h1>CSS Properties Tutorial</h1>
+    
+    <div class="section">
+      <h2>1. Box Model Properties</h2>
+
+      <div class="property">
+        <span class="property-name">margin</span>
+        <p class="property-description">Controls the space outside an element</p>
+        <div class="example">
+          margin: 0; /* No margin */
+          margin: 20px; /* All sides */
+          margin: 0 auto; /* Center align element */
+          margin-bottom: 30px; /* Single side */
+        </div>
+      </div>
+
+      <div class="property">
+        <span class="property-name">padding</span>
+        <p class="property-description">Controls the space inside an element</p>
+        <div class="example">
+          padding: 20px; /* All sides */
+          padding: 30px 20px; /* Vertical Horizontal */
+          padding-left: 20px; /* Single side */
+        </div>
+      </div>
+
+      <div class="property">
+        <span class="property-name">box-sizing</span>
+        <p class="property-description">Defines how element's width and height are calculated</p>
+        <div class="example">
+          box-sizing: border-box; /* Include padding and border in element's size */
+        </div>
+        <div class="note">
+          border-box is preferred as it makes sizing elements more intuitive
+        </div>
+      </div>
     </div>
 
-    <form id="signupForm">
-      <div class="form-group">
-        <label class="required" for="fullName">Full Name</label>
-        <input 
-          type="text" 
-          id="fullName" 
-          name="fullName" 
-          required 
-          placeholder="John Doe"
-        >
+    <div class="section">
+      <h2>2. Typography Properties</h2>
+
+      <div class="property">
+        <span class="property-name">font-family</span>
+        <p class="property-description">Sets the typeface for text</p>
+        <div class="example">
+          font-family: system-ui, sans-serif;
+        </div>
       </div>
 
-      <div class="form-group">
-        <label class="required" for="email">Email Address</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required
-          placeholder="you@example.com"
-        >
+      <div class="property">
+        <span class="property-name">font-size</span>
+        <p class="property-description">Controls text size</p>
+        <div class="example">
+          font-size: 16px;
+          font-size: 1.5rem;
+        </div>
       </div>
 
-      <div class="form-group">
-        <label class="required" for="password">Password</label>
-        <input 
-          type="password" 
-          id="password" 
-          name="password" 
-          required
-        >
-        <div class="help-text">Must be at least 8 characters long</div>
+      <div class="property">
+        <span class="property-name">font-weight</span>
+        <p class="property-description">Controls text thickness</p>
+        <div class="example">
+          font-weight: 500; /* Medium */
+          font-weight: bold;
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="role">Role</label>
-        <select id="role" name="role">
-          <option value="">Select a role</option>
-          <option value="developer">Developer</option>
-          <option value="designer">Designer</option>
-          <option value="manager">Manager</option>
-          <option value="other">Other</option>
-        </select>
+      <div class="property">
+        <span class="property-name">line-height</span>
+        <p class="property-description">Controls vertical space between lines</p>
+        <div class="example">
+          line-height: 1.6; /* 1.6 times the font size */
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. Color and Background Properties</h2>
+
+      <div class="property">
+        <span class="property-name">color</span>
+        <p class="property-description">Sets text color</p>
+        <div class="example">
+          color: #333;
+          color: white;
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="bio">Bio</label>
-        <textarea 
-          id="bio" 
-          name="bio" 
-          placeholder="Tell us about yourself"
-        ></textarea>
-        <div class="help-text">Keep it short and sweet</div>
+      <div class="property">
+        <span class="property-name">background</span>
+        <p class="property-description">Sets element background</p>
+        <div class="example">
+          background: white;
+          background: #f0f2f5;
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Layout Properties</h2>
+
+      <div class="property">
+        <span class="property-name">display</span>
+        <p class="property-description">Controls how element is displayed</p>
+        <div class="example">
+          display: block; /* Takes full width */
+          display: inline; /* Takes only needed width */
+        </div>
       </div>
 
-      <div class="checkbox-group">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms" class="required">I agree to the Terms and Conditions</label>
+      <div class="property">
+        <span class="property-name">width</span>
+        <p class="property-description">Sets element width</p>
+        <div class="example">
+          width: 100%; /* Full width */
+          max-width: 500px; /* Maximum width */
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Border and Shadow Properties</h2>
+
+      <div class="property">
+        <span class="property-name">border</span>
+        <p class="property-description">Sets element border</p>
+        <div class="example">
+          border: 1px solid #ddd;
+          border: none;
+        </div>
       </div>
 
-      <div class="form-group">
-        <button type="submit">Create Account</button>
+      <div class="property">
+        <span class="property-name">border-radius</span>
+        <p class="property-description">Rounds element corners</p>
+        <div class="example">
+          border-radius: 6px;
+          border-radius: 50%; /* Circle */
+        </div>
       </div>
-    </form>
+
+      <div class="property">
+        <span class="property-name">box-shadow</span>
+        <p class="property-description">Adds shadow to element</p>
+        <div class="example">
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6. Form-Specific Properties</h2>
+
+      <div class="property">
+        <span class="property-name">outline</span>
+        <p class="property-description">Controls focus outline on form elements</p>
+        <div class="example">
+          outline: none;
+        </div>
+      </div>
+
+      <div class="property">
+        <span class="property-name">resize</span>
+        <p class="property-description">Controls textarea resizing</p>
+        <div class="example">
+          resize: vertical; /* Only vertical resizing */
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>7. Responsive Design Properties</h2>
+
+      <div class="property">
+        <span class="property-name">@media</span>
+        <p class="property-description">Applies styles based on screen size</p>
+        <div class="example">
+          @media (max-width: 600px) {
+            .form-container {
+              padding: 20px;
+            }
+          }
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
